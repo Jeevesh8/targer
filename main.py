@@ -23,7 +23,7 @@ if __name__ == "__main__":
                         help='Development data in format defined by --data-io param.')
     parser.add_argument('--test', default='data/NER/CoNNL_2003_shared_task/test.txt',
                         help='Test data in format defined by --data-io param.')
-    parser.add_argument('-d', '--data-io', choices=['connl-ner-2003', 'connl-pe', 'connl-wd'],
+    parser.add_argument('-d', '--data-io', choices=['connl-ner-2003', 'connl-pe', 'connl-wd', 'ampersand'],
                         default='connl-ner-2003', help='Data read/write file format.')
     parser.add_argument('--gpu', type=int, default=0, help='GPU device number, -1  means CPU.')
     parser.add_argument('--model', help='Tagger model.', choices=['BiRNN', 'BiRNNCNN', 'BiRNNCRF', 'BiRNNCNNCRF'],
