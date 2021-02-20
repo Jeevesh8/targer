@@ -47,13 +47,13 @@ class DataIOAmpersand():
                 continue
             if s.startswith('<claim>'):
                 str_lis.append( s[7:-8] )
-                type_lis += [1]*len(str_lis[-1].split(' '))
+                type_lis += ['B-C']+['C-C']*(len(str_lis[-1].split(' '))-1)
             elif s.startswith('<premise>'):
                 str_lis.append( s[9:-10]  )
-                type_lis += [2]*len(str_lis[-1].split(' '))
+                type_lis += ['B-P']+['C-P']*(len(str_lis[-1].split(' '))-1)
             else:
                 str_lis.append( s )
-                type_lis += [0]*len(str_lis[-1].split(' '))
+                type_lis += ['O']*len(str_lis[-1].split(' '))
 
         return str_lis, type_lis        
 
