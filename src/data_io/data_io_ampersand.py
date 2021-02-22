@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 class DataIOAmpersand():
 
     def clean_text(self, text):
-
+                   
         text = text.strip(' _\t\n')
         text = text.split('____')[0]                                                    #To remove footnotes
         text = text.strip(' _\t\n')
@@ -14,6 +14,8 @@ class DataIOAmpersand():
         text = text.rstrip(' _\n\t')
         text = re.sub(r'\n', ' ', text)
         text = text.lower()
+        for elem in ['.', ',', ':', '!', ';', '*', '\"', '\'', '(', ')', '[', ']', '<url>']:
+            text = text.replace(elem, ' '+elem+' ')
         return text
 
     def file_loader(self, folder):
