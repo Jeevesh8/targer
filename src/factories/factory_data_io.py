@@ -2,7 +2,7 @@
 from src.data_io.data_io_connl_ner_2003 import DataIOConnlNer2003
 from src.data_io.data_io_connl_pe import DataIOConnlPe
 from src.data_io.data_io_connl_wd import DataIOConnlWd
-from src.data_io.data_io_connl_wd import DataIOAmpersand
+from src.data_io.data_io_ampersand import DataIOAmpersand
 
 class DataIOFactory():
     """DataIOFactory contains wrappers to create various data readers/writers."""
@@ -14,7 +14,7 @@ class DataIOFactory():
             return DataIOConnlPe()
         elif args.data_io == 'connl-wd':
             return DataIOConnlWd()
-        elif args.data_io = 'ampersand':
-            return DataIoAmpersand()
+        elif args.data_io == 'ampersand':
+            return DataIOAmpersand()
         else:
             raise ValueError('Unknown DataIO %s.' % args.data_io)
