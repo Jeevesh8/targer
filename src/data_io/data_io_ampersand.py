@@ -68,8 +68,6 @@ class DataIOAmpersand():
             
             for elem in parsed_xml.find_all('reply')+[parsed_xml.find('OP')]:
                 thread.append( self.divide_pc(elem.contents) )
-                if len(thread)==self.config['max_tree_size']:
-                    break
                 
             words_lis = []
             tags_lis = []
