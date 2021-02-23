@@ -14,7 +14,7 @@ class DataIOAmpersand():
         text = text.rstrip(' _\n\t')
         text = re.sub(r'\n', ' ', text)
         text = text.lower()
-        for elem in ['.', ',', ':', '!', ';', '*', '\"', '\'', '(', ')', '[', ']', '<url>']:
+        for elem in ['.', ',', ':', '!', ';', '*', '\"', '\'', '(', ')', '[', ']', '<url>', '?','-']:
             text = text.replace(elem, ' '+elem+' ')
         return text
 
